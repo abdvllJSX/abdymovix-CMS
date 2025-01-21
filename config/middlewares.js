@@ -19,7 +19,7 @@ module.exports = [
     config: {
       enabled: true,
       headers: '*',
-      origin: ['http://localhost:5173', 'http://localhost:1337', 'https://abdycms.netlify.app', 'https://abdymovix-cms.onrender.com']
+      origin: ['http://localhost:1337', 'https://abdycms.netlify.app',]
     }
   },
   'strapi::poweredBy',
