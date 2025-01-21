@@ -1,4 +1,3 @@
-// config/middlewares.js
 module.exports = [
   'strapi::errors',
   {
@@ -8,7 +7,7 @@ module.exports = [
         useDefaults: true,
         directives: {
           'connect-src': ["'self'", 'https:'],
-          'img-src': ["'self'", 'data:', 'blob:'],
+          'img-src': ["'self'", 'data:', 'blob:', 'https://abdycms.netlify.app'],
           'media-src': ["'self'", 'data:', 'blob:'],
           upgradeInsecureRequests: null,
         },
@@ -16,20 +15,18 @@ module.exports = [
     },
   },
   {
-    name: 'strapi::body',
+    name: 'strapi::cors',
     config: {
-      formLimit: '256mb', // Increase form body size limit
-      jsonLimit: '256mb', // Increase JSON body size limit
-      textLimit: '256mb', // Increase text body size limit
-      formidable: {
-        maxFileSize: 250 * 1024 * 1024, // Increase file size limit to 250mb
-      },
-    },
+      enabled: true,
+      headers: '*',
+      origin: ['http://localhost:1337', 'https://abdycms.netlify.app', 'https://abdymovix-cms.onrender.com']
+    }
   },
-  'strapi::cors',
   'strapi::poweredBy',
   'strapi::logger',
   'strapi::query',
+  'strapi::body',
+  'strapi::session',
   'strapi::favicon',
   'strapi::public',
 ];
