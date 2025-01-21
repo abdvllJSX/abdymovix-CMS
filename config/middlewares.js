@@ -7,7 +7,7 @@ module.exports = [
         useDefaults: true,
         directives: {
           'connect-src': ["'self'", 'https:'],
-          'img-src': ["'self'", 'data:', 'blob:', 'https://abdycms.netlify.app'],
+          'img-src': ["'self'", 'data:', 'blob:', 'https://abdymovic.xyz'],
           'media-src': ["'self'", 'data:', 'blob:'],
           upgradeInsecureRequests: null,
         },
@@ -19,7 +19,7 @@ module.exports = [
     config: {
       enabled: true,
       headers: '*',
-      origin: ['http://localhost:5713', 'https://abdycms.netlify.app']
+      origin: ['http://localhost:5713', 'https://abdymovic.xyz']
     }
   },
   'strapi::poweredBy',
